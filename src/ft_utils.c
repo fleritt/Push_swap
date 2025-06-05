@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/18 11:18:55 by marvin            #+#    #+#             */
-/*   Updated: 2025/01/18 11:18:55 by marvin           ###   ########.fr       */
+/*   Created: 2025/01/21 12:44:33 by marvin            #+#    #+#             */
+/*   Updated: 2025/01/21 12:44:33 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Include/push_swap.h"
 
-int main (int argc, char **argv)
+void ft_error(char *err)
 {
-    t_stack	a;
-    t_stack	b;
-    int		*n;
-	int		c;
-
-    if (argc < 2)
-        ft_error("Error");
-    else if (argc == 2)
-        argv = ft_split(argv[1], ' ');
-    else 
-    {
-        
-    }
+    ft_putstr(err, 2);
+    exit(EXIT_FAILURE);
 }

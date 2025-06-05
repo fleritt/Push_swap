@@ -15,10 +15,22 @@
 #include <stdio.h>
 #include <limits.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include "../libft/libft.h"
+
+typedef struct s_node
+{
+	int				data;
+	int				s_index;
+	struct s_node	*next;
+}	t_node;
 
 typedef struct s_stack
 {
-    
+	t_node			*head;
+	int				size;
 }	t_stack;
+
+void ft_error(char *err);
 
 #endif
