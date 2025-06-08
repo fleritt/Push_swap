@@ -14,17 +14,21 @@
 
 int main (int argc, char **argv)
 {
-    t_stack	a;
-    t_stack	b;
-    int		*n;
+    t_stack a;
+    t_stack b;
+    int     *n;
 	int		c;
 
     if (argc < 2)
-        ft_error("Error");
-    else if (argc == 2)
+        ft_error("");
+    if (argc == 2)
         argv = ft_split(argv[1], ' ');
-    else 
-    {
-        
-    }
+    c = ft_digit(argv);
+    if (c <= 1)
+        ft_error("Error");
+    n = ft_args_int(argv, c);
+    if (!n)
+        ft_error("Error");
+    push_stack(&a, &b, c, n);
+    return (0);
 }

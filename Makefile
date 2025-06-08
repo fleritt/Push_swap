@@ -11,24 +11,33 @@
 # **************************************************************************** #
 
 NAME = push_swap
+LIBFT = ./libft/libft.a
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g3
 RM = rm -f
 
-SRC = ./src/push_swap.c
+SRC = ./src/push_swap.c  ./src/ft_parse.c ./src/ft_error.c 
 OBJ = $(SRC:.c=.o)
 
-all: ${NAME}
+all: ${MLX} ${LIBFT} ${NAME}
 
 ${NAME}: ${OBJ}
-	${CC} ${CFLAGS} ${SRC} -o ${NAME}
+			${CC} ${SRC} ${MLX} ${LIBFT} ${CFLAGS} ${MINILIBX_FLAGS} -o ${NAME}
 
-clean:
-	${RM} ${OBJ}
+${LIBFT}:
+			make -C libft/
+
+bonus: ${OBJ}
+			${CC} ${SRC} ${MLX} ${LIBFT} ${CFLAGS} ${MINILIBX_FLAGS} -o ${NAME}
+
+clean: 
+			make clean -C libft/
+					${RM} ${OBJ}
 
 fclean: clean
-	${RM} ${NAME}
+			${RM} ${NAME}
+					make fclean -C libft/
 
 re: fclean all
 

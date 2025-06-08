@@ -21,7 +21,7 @@
 typedef struct s_node
 {
 	int				data;
-	int				s_index;
+	int				index;
 	struct s_node	*next;
 }	t_node;
 
@@ -32,5 +32,7 @@ typedef struct s_stack
 }	t_stack;
 
 void ft_error(char *err);
+int ft_digit(char **argv);
+int *ft_args_int(char **argv, int c);
 
 #endif
