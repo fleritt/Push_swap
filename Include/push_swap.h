@@ -31,8 +31,13 @@ typedef struct s_stack
 	int				size;
 }	t_stack;
 
-void ft_error(char *err);
-int ft_digit(char **argv);
-int *ft_args_int(char **argv, int c);
+void	ft_error(char *err);
+char    **args_str(int argc, char **argv);
+int		ft_digit(char **argv);
+int		*ft_args_int(char **argv, int c);
+void	create_stack(t_stack *a, t_stack *b, int *numbers, int c);
+long long int ft_atol(char *str);
+int		ft_min_max(char **argv);
+void    ft_swap(t_stack *stack, char x_stack);
 
 #endif

@@ -14,10 +14,10 @@ NAME = push_swap
 LIBFT = ./libft/libft.a
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g3
+CFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
 RM = rm -f
 
-SRC = ./src/push_swap.c  ./src/ft_parse.c ./src/ft_error.c 
+SRC = ./src/push_swap.c  ./src/ft_parse.c ./src/ft_error.c ./src/ft_stack.c ./src/ft_utils.c
 OBJ = $(SRC:.c=.o)
 
 all: ${MLX} ${LIBFT} ${NAME}

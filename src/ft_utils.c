@@ -12,8 +12,15 @@
 
 #include "../Include/push_swap.h"
 
-void ft_error(char *err)
+void    ft_swap(t_stack *stack, char x_stack)
 {
-    ft_putstr(err, 2);
-    exit(EXIT_FAILURE);
+    t_node *n1;
+    t_node *n2;
+
+    n1 = stack->head;
+    n2 = n1->next;
+    n1->next = n2->next;
+    n2->next = n1;
+    stack->head = n2;
+    ft_printf("s%c\n", x_stack);
 }

@@ -12,7 +12,7 @@
 
 #include "../Include/push_swap.h"
 
-void ft_error(char *err)
+void	ft_error(char *err)
 {
     ft_putstr_fd(err, 2);
     exit(EXIT_FAILURE);
