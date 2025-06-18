@@ -38,6 +38,8 @@ int		*ft_args_int(char **argv, int c);
 void	create_stack(t_stack *a, t_stack *b, int *numbers, int c);
 long long int ft_atol(char *str);
 int		ft_min_max(char **argv);
-void    ft_swap(t_stack *stack, char x_stack);
+void    ft_swap(t_stack *stack);
+void	ft_rotate(t_stack *stack);
+void	ft_reverse_rotate(t_stack *stack);
 
 #endif
