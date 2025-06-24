@@ -71,6 +71,9 @@ int main (int argc, char **argv)
     if (!n)
         ft_error("Error");
     create_stack(&a, &b, n, c);
+    ft_sort(&a, n, c);
     free(n);
+    free_args(args, c);
+    free_stack(&a, c);
     return (0);
 }

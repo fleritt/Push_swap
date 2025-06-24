@@ -17,7 +17,8 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
 RM = rm -f
 
-SRC = ./src/push_swap.c  ./src/ft_parse.c ./src/ft_error.c ./src/ft_stack.c ./src/ft_utils.c
+SRC = ./src/push_swap.c  ./src/ft_parse.c ./src/ft_free_utils.c ./src/ft_stack.c \
+./src/ft_instructions.c ./src/ft_sort.c ./src/ft_sort_utils.c
 OBJ = $(SRC:.c=.o)
 
 all: ${MLX} ${LIBFT} ${NAME}

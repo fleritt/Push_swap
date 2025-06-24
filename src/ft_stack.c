@@ -6,7 +6,7 @@
 /*   By: rfleritt <rfleritt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 08:33:10 by rfleritt          #+#    #+#             */
-/*   Updated: 2025/06/10 11:12:50 by rfleritt         ###   ########.fr       */
+/*   Updated: 2025/06/21 11:31:50 by rfleritt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,19 @@ void	ft_push(t_stack *stack, int n)
 	new->next = stack->head;
 	stack->head = new;
 	stack->size++;
+}
+
+void	ft_pop(t_stack *stack)
+{
+	t_node	*pop;
+	
+	if (!stack->head)
+		return ;
+	pop = stack->head;
+	stack->head = pop->next;
+	free(pop);
+	pop = NULL;
+	stack->size--;
 }
 
 void	create_stack(t_stack *a, t_stack *b, int *numbers, int c)

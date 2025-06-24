@@ -12,51 +12,40 @@
 
 #include "../Include/push_swap.h"
 
-void	ft_swap(t_stack *stack, char x)
+void	ft_error(char *err)
 {
-	t_node *n1;
-	t_node *n2;
+    ft_putstr_fd(err, 2);
+    exit(EXIT_FAILURE);
+}
+void    free_stack(t_stack *stack, int c)
+{
+    int i;
 
-	n1 = stack->head;
-	n2 = n1->next;
-	n1->next = n2->next;
-	n2->next = n1;
-	stack->head = n2;
-	ft_printf("s%c\n", x);
+    i = 0;
+    while (i < c)
+    {
+        ft_pop(stack);
+        i++;
+    }
 }
 
-void	ft_rotate(t_stack *stack, char x)
+void    ft_exit(t_stack *a, int *n, int c)
 {
-	t_node	*n1;
-	t_node	*n2;
-
-	if (!stack->head || !stack->head->next)
-        return;
-	n1 = stack->head;
-	n2 = stack->head;
-	while (n2->next)
-		n2 = n2->next;
-	stack->head = n1->next;
-	n1->next = NULL;
-	n2->next = n1;
-	ft_printf("r%c\n", x);
+    if (n != NULL)
+        free(n);
+    free_stack(a, c);
+    ft_error("");
 }
 
-void	ft_reverse_rotate(t_stack *stack, char x)
+void    free_args(char **args, int c)
 {
-	t_node	*n1;
-	t_node	*n2;
+    int i;
 
-	if (!stack->head || !stack->head->next)
-        return ;
-	n2 = stack->head;
-	while (n2->next)
-	{
-		n1 = n2;
-		n2 = n2->next;
-	}
-	n1->next = NULL;
-	n2->next = stack->head;
-	stack->head = n2;
-	ft_printf("rr%c\n", x);
+    i = 0;
+    while (i < c)
+    {
+        free(args[i]);
+        i++;
+    }
+    free(args);
 }
