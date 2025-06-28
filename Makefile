@@ -18,7 +18,7 @@ CFLAGS = -Wall -Werror -Wextra -g3
 RM = rm -f
 
 SRC = ./src/push_swap.c  ./src/ft_parse.c ./src/ft_free_utils.c ./src/ft_stack.c \
-./src/ft_instructions.c ./src/ft_sort.c ./src/ft_sort_utils.c
+./src/ft_instructions.c ./src/ft_sort.c ./src/ft_sort_utils.c ./src/ft_ksort.c
 OBJ = $(SRC:.c=.o)
 
 all: ${MLX} ${LIBFT} ${NAME}

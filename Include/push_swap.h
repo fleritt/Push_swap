@@ -12,11 +12,11 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdio.h>
-#include <limits.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "../libft/libft.h"
+# include <stdio.h>
+# include <limits.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include "../libft/libft.h"
 
 typedef struct s_node
 {
@@ -31,25 +31,27 @@ typedef struct s_stack
 	int				size;
 }	t_stack;
 
-void	ft_error(char *err);
-char    **args_str(int argc, char **argv);
-int		ft_digit(char **argv);
-int		*ft_args_int(char **argv, int c);
-void	create_stack(t_stack *a, t_stack *b, int *numbers, int c);
-void	ft_push_stack(t_stack *stack, int n);
-long long int ft_atol(char *str);
-int		ft_min_max(char **argv);
-void	ft_pop(t_stack *stack);
-void	ft_push(t_stack *stack1, t_stack *stack2, char x);
-void    ft_swap(t_stack *stack, char x);
-void	ft_rotate(t_stack *stack, char x);
-void	ft_reverse_rotate(t_stack *stack, char x);
-void    free_args(char **args, int *n);
-void    ft_sort(t_stack *a, t_stack *b, int *n, int c);
-void	ft_exit(t_stack *a, int *n, int c);
-int		ft_check_sorted(t_stack *stack);
-void    free_stack(t_stack *stack, int c);
-void    ft_three_sort(t_stack *stack);
-void	ft_small_sort(t_stack *a, t_stack *b);
+void			ft_error(char *err);
+char			**args_str(int argc, char **argv);
+int				ft_digit(char **argv);
+int				*ft_args_int(char **argv, int c);
+void			create_stack(t_stack *a, t_stack *b, int *numbers, int c);
+void			ft_push_stack(t_stack *stack, int n);
+long long int	ft_atol(char *str);
+int				ft_min_max(char **argv);
+void			ft_pop(t_stack *stack);
+void			ft_push(t_stack *stack1, t_stack *stack2, char x);
+void			ft_swap(t_stack *stack, char x);
+void			ft_rotate(t_stack *stack, char x);
+void			ft_reverse_rotate(t_stack *stack, char x);
+void			free_args(char **args, int *n);
+void			ft_sort(t_stack *a, t_stack *b, int *n, int c);
+void			ft_exit(t_stack *a, int *n, int c);
+int				ft_check_sorted(t_stack *stack);
+void			free_stack(t_stack *stack, int c);
+void			ft_three_sort(t_stack *stack);
+void			ft_small_sort(t_stack *a, t_stack *b);
+void			k_sort1(t_stack *a, t_stack *b, int size);
+void			k_sort2(t_stack *a, t_stack *b, int size);
 
 #endif
