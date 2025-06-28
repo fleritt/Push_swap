@@ -6,7 +6,7 @@
 /*   By: rfleritt <rfleritt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 11:11:27 by rfleritt          #+#    #+#             */
-/*   Updated: 2025/06/12 00:18:32 by rfleritt         ###   ########.fr       */
+/*   Updated: 2025/06/27 22:55:32 by rfleritt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,16 @@ int ft_digit(char **argv)
         i = 0;
         while(argv[j][i])
         {
+            if ((argv[j][i] == '-' || argv[j][i] == '+') && ft_isdigit(argv[j][i + 1]))
+                i++;
             if (ft_isdigit(argv[j][i]))
+            {
                 c++;
-            else if (ft_isdigit(argv[j][i + 1]) && (argv[j][i] == '-'
-            	|| argv[j][i] == '+'))
-                c++;
+                while (ft_isdigit(argv[j][i]))
+                    i++;
+            }
             else
 				return (-1);
-			i++;
         }
 		j++;
     }
@@ -92,8 +94,12 @@ int ft_min_max(char **argv)
 	int	i;
 
 	i = 0;
-    if (ft_atol(argv[i]) > INT_MAX || ft_atol(argv[i]) < INT_MIN)
-        return (1);
+    while(argv[i])
+    {
+        if (ft_atol(argv[i]) > INT_MAX || ft_atol(argv[i]) < INT_MIN)
+            return (1);
+        i++;
+    }
     return (0);
 }
 
@@ -106,6 +112,8 @@ int *ft_args_int(char **argv, int c)
 	if (ft_min_max(argv))
 		return (NULL);
     numbers = malloc(sizeof(int) * c);
+    if (!numbers)
+        return (NULL);
     j = 0;
     i = 0;
     while (argv[j])

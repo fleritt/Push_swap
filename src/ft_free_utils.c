@@ -37,15 +37,20 @@ void    ft_exit(t_stack *a, int *n, int c)
     ft_error("");
 }
 
-void    free_args(char **args, int c)
+void    free_args(char **args, int *n)
 {
     int i;
 
     i = 0;
-    while (i < c)
-    {
-        free(args[i]);
-        i++;
+    if (args)
+    { 
+        while (args[i])
+        {
+            free(args[i]);
+            i++;
+        }
+        free(args);
     }
-    free(args);
+    if (n)
+        free(n);
 }

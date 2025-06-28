@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rfleritt <rfleritt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 09:17:51 by rfleritt          #+#    #+#             */
-/*   Updated: 2025/01/11 10:16:57 by marvin           ###   ########.fr       */
+/*   Updated: 2025/06/27 22:08:26 by rfleritt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ int		ft_print_nbr(int n);
 int		ft_print_unsig(unsigned int n);
 int		ft_print_hex(unsigned int n, unsigned int word);
 int		ft_print_mem(unsigned long long n);
+int	    *ft_intdup(int *s, int length);
 
 #endif

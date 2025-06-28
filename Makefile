@@ -14,7 +14,7 @@ NAME = push_swap
 LIBFT = ./libft/libft.a
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -g3
 RM = rm -f
 
 SRC = ./src/push_swap.c  ./src/ft_parse.c ./src/ft_free_utils.c ./src/ft_stack.c \

@@ -33,9 +33,10 @@ char    **args_str(int argc, char **argv)
 {
     int j;
     char *aux;
+    char **args;
 
     if (argc == 2) 
-        argv = ft_split(argv[1], ' ');
+        args = ft_split(argv[1], ' ');
     else
     {
         j = 1;
@@ -47,10 +48,10 @@ char    **args_str(int argc, char **argv)
             aux = ft_free_strjoin(aux, " ");
             aux = ft_free_strjoin(aux, argv[j]);
         }
-        argv = ft_split(aux, ' ');
+        args = ft_split(aux, ' ');
         free(aux);
     }
-    return (argv);
+    return (args);
 }
 
 int main (int argc, char **argv)
@@ -60,20 +61,23 @@ int main (int argc, char **argv)
     char    **args;
     int     *n;
 	int		c;
+    int     *sort;
 
     if (argc < 2)
         ft_error("");
     args = args_str(argc, argv);
     c = ft_digit(args);
-    if (c <= 1)
-        ft_error("Error");
     n = ft_args_int(args, c);
-    if (!n)
-        ft_error("Error");
-    create_stack(&a, &b, n, c);
-    ft_sort(&a, n, c);
-    free(n);
-    free_args(args, c);
+    if (!n || c <= 1)
+    {
+        free_args(args, n);
+        ft_error("Error\n");
+    }
+    sort = ft_intdup(n, c);
+    create_stack(&a, &b, sort, c);
+    ft_sort(&a, &b, n, c);
+    free(sort);
+    free_args(args, n);
     free_stack(&a, c);
     return (0);
 }

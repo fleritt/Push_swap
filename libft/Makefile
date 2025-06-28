@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: rfleritt <rfleritt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 12:38:40 by rfleritt          #+#    #+#              #
-#    Updated: 2024/12/03 11:40:46 by marvin           ###   ########.fr        #
+#    Updated: 2025/06/27 22:07:57 by rfleritt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ ft_isalnum.c ft_memchr.c ft_strchr.c ft_strnstr.c ft_substr.c ft_strmapi.c \
 ft_isalpha.c ft_memcmp.c ft_strlcat.c ft_strrchr.c ft_strjoin.c ft_striteri.c \
 ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c get_next_line.c \
 ft_printf.c ft_print_char.c ft_print_hex.c ft_print_mem.c ft_print_nbr.c \
-ft_print_str.c ft_print_unsig.c 
+ft_print_str.c ft_print_unsig.c ft_intdup.c
 
 OBJ = $(SRC:.c=.o)
 

@@ -12,6 +12,16 @@
 
 #include "../Include/push_swap.h"
 
+void	ft_push(t_stack *stack1, t_stack *stack2, char x)
+{
+	if (stack1->head == NULL)
+		return ;
+	ft_push_stack(stack2, stack1->head->value);
+	stack2->head->index = stack1->head->index;
+	ft_pop(stack1);
+	ft_printf("p%c\n", x);
+}
+
 void	ft_swap(t_stack *stack, char x)
 {
 	t_node *n1;
